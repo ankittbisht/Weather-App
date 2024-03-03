@@ -3,13 +3,19 @@ import backgroundImage from "./assets/sunset.jpg";
 import { MOCK_DATA } from "./utils/constant";
 
 function App() {
+  
   const [data, setData] = useState(MOCK_DATA);
   const [location, setLocation] = useState("");
+
+  const apiKey = import.meta.env.VITE_API_KEY;
+  const apiUrl = import.meta.env.VITE_API_URL;
+  // const api = process.env.REACT_APP_WEATHER_API;
+  // const apiKey = process.env.REACT_APP_KEY;
 
   const searchLocation = async (event) => {
     if (event.key === "Enter") {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=6cd2b3accdeeaa317eac33bf3b6376f2`
+        `${apiUrl} +${location}+ &units=imperial&appid= +  ${apiKey} `
       );
       const json = await response.json();
 

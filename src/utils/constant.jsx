@@ -1,7 +1,3 @@
-export const WEATHER_API =
-  "https://api.openweathermap.org/data/2.5/weather?q={city%20name}&appid={API%20key}";
-
-export const API_KEY = "6cd2b3accdeeaa317eac33bf3b6376f2";
 
 export const MOCK_DATA = {
   weather: [
