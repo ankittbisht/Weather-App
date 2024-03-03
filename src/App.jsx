@@ -5,8 +5,9 @@ import { MOCK_DATA } from "./utils/constant";
 function App() {
   const apiKey = import.meta.env.VITE_API_KEY;
   const apiUrl = import.meta.env.VITE_API_URL;
-  console.log(apiKey)
-  console.log(apiUrl)
+  
+  // console.log(apiKey)
+  // console.log(apiUrl)
   
   const [data, setData] = useState(MOCK_DATA);
   const [location, setLocation] = useState("");
