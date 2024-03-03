@@ -3,19 +3,21 @@ import backgroundImage from "./assets/sunset.jpg";
 import { MOCK_DATA } from "./utils/constant";
 
 function App() {
+  const apiKey = import.meta.env.VITE_API_KEY;
+  const apiUrl = import.meta.env.VITE_API_URL;
+  console.log(apiKey)
+  console.log(apiUrl)
   
   const [data, setData] = useState(MOCK_DATA);
   const [location, setLocation] = useState("");
 
-  const apiKey = import.meta.env.VITE_API_KEY;
-  const apiUrl = import.meta.env.VITE_API_URL;
-  // const api = process.env.REACT_APP_WEATHER_API;
-  // const apiKey = process.env.REACT_APP_KEY;
+
+
 
   const searchLocation = async (event) => {
     if (event.key === "Enter") {
       const response = await fetch(
-        `${apiUrl} +${location}+ &units=imperial&appid= +  ${apiKey} `
+        `${apiUrl}${location}&units=imperial&appid=${apiKey}`
       );
       const json = await response.json();
 
